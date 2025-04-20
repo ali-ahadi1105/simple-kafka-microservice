@@ -12,3 +12,8 @@ export default async function StartServer() {
 StartServer().then(() => {
     console.log('Server is up...');
 });
+
+process.on("uncaughtException", (err) => {
+    console.log(err);
+    process.exit(1);
+})

@@ -1,0 +1,18 @@
+import { ICatalogRepositoryInterface } from "../interfaces/catalogRepository.interface"
+
+export class CatalogService {
+
+    private _repository: ICatalogRepositoryInterface;
+
+    constructor(readonly repository: ICatalogRepositoryInterface) {
+        this._repository = repository;
+    }
+    async createProduct(content: any) {
+        const data = await this._repository.create(content);
+        return data;
+    }
+    updateProduct(content: any) {}
+    getProduct(content: any) {}
+    getAllProduct(content: any) {}
+    deleteProduct(content: any) {}
+}
