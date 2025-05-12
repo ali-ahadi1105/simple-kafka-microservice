@@ -14,7 +14,9 @@ export class CatalogService {
         }
         return data;
     }
-    updateProduct(content: any) {}
+    async updateProduct(content: any) {
+        return await this._repository.update(content);
+    }
     getProduct(content: any) {}
     getAllProduct(content: any) {}
     deleteProduct(content: any) {}
