@@ -13,13 +13,13 @@ export class MockCatalogRepository implements ICatalogRepositoryInterface {
         return Promise.resolve(data as unknown as Product);
     }
     delete(id: any) {
-        throw new Error("Method not implemented.");
+        return Promise.resolve(id);
     }
-    findAll(): Promise<Product[]> {
-        throw new Error("Method not implemented.");
+    findOne(id: number): Promise<Product> {
+        return Promise.resolve({} as unknown as Product);
     }
-    find(id: number): Promise<Product> {
-        throw new Error("Method not implemented.");
+    find(limit: number, offset: number): Promise<Product[]> {
+        return Promise.resolve([]);
     }
     
 }

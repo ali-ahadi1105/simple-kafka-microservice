@@ -15,9 +15,20 @@ export class CatalogService {
         return data;
     }
     async updateProduct(content: any) {
+        // TODO: must emit event to update product in elastic search
         return await this._repository.update(content);
     }
-    getProduct(content: any) {}
-    getAllProduct(content: any) {}
-    deleteProduct(content: any) {}
+    // TODO: must get product from elastic search
+    getProducts(limit: number, offset: number) {
+        const data = this._repository.find(limit, offset);
+        return data;
+    }
+    async getProduct(id: number) {
+        const data = await this._repository.findOne(id);
+        return data;
+    }
+    async deleteProduct(id: number) {
+        // TODO: delete record from elastic search
+        return await this._repository.delete(id);
+    }
 }
