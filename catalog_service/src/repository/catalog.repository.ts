@@ -11,10 +11,10 @@ export class CatalogRepository implements ICatalogRepositoryInterface {
     delete(id: any) {
         throw new Error("Method not implemented.");
     }
-    findAll(): Promise<Product[]> {
+    find(): Promise<Product[]> {
         throw new Error("Method not implemented.");
     }
-    find(id: number): Promise<Product> {
+    findOne(id: number): Promise<Product> {
         throw new Error("Method not implemented.");
     }
     
